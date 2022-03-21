@@ -1,0 +1,37 @@
+<ASSEMBLER_INFO>
+ <VERSION>2.1.51</VERSION>
+ <DEVICE>"ATmega32"</DEVICE>
+ <WORKING_DIR>E:\University\00011-MP (Rizpar)\HW6\q1\program\Debug</WORKING_DIR>
+ <INCLUDE_PATH>
+  <DIR>D:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRAssembler\2.1.51.17\AvrAssembler/Include</DIR>
+ </INCLUDE_PATH>
+ <SOURCE_FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</SOURCE_FILE>
+ <INCLUDED_FILES>
+  <FILE>D:\Program Files (x86)\Atmel\AVR Studio 5.1\extensions\Atmel\AVRAssembler\2.1.51.17\AvrAssembler/Include\m32def.inc</FILE>
+ </INCLUDED_FILES>
+ <OBJECT_FILES>
+  <FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\Debug/program.obj</FILE>
+ </OBJECT_FILES>
+ <HEX_FILES>
+  <FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\Debug/program.hex</FILE>
+ </HEX_FILES>
+ <OUTPUT_FILES>
+  <FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\Debug\program.map</FILE>
+  <FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\Debug\program.lss</FILE>
+ </OUTPUT_FILES>
+ <LABELS>
+  <RESET><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>18</LINE></RESET>
+  <DISPLAY><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>65</LINE></DISPLAY>
+  <BEGIN><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>25</LINE></BEGIN>
+  <DECREMENT><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>40</LINE></DECREMENT>
+  <INCREMENT><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>33</LINE></INCREMENT>
+  <INC_YEKAN><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>47</LINE></INC_YEKAN>
+  <INC_DAHGAN><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>51</LINE></INC_DAHGAN>
+  <DEC_YEKAN><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>56</LINE></DEC_YEKAN>
+  <DEC_DAHGAN><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>60</LINE></DEC_DAHGAN>
+  <DELAY_DISP><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>73</LINE></DELAY_DISP>
+  <L4><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>75</LINE></L4>
+  <L5><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>76</LINE></L5>
+  <L6><FILE>E:\University\00011-MP (Rizpar)\HW6\q1\program\program.asm</FILE><LINE>77</LINE></L6>
+ </LABELS>
+</ASSEMBLER_INFO>

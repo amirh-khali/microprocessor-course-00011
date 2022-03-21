@@ -1,0 +1,73 @@
+#include <mega32.h>
+#include <alcd.h>
+#include <stdio.h>
+#include <delay.h>
+
+void request(void) {
+    DDRD.0 = 1;
+    PORTD.0 = 0;
+    delay_ms(20);
+    PORTD.0 = 1;
+}
+
+void response(void) {
+    DDRD.0 = 0;
+    while(PIND.0 == 1);
+    while(PIND.0 == 0);
+    while(PIND.0 == 1);
+}
+
+unsigned char read_dht11(void) {
+    char counter_bit = 0, data = 0;
+    while(counter_bit < 8) {
+        counter_bit++; 
+        while(PIND.0==0);
+        delay_us(30);
+        
+        if(PIND.0==1)
+            data=(data<<1)|(0x01);  
+        else
+            data=data<<1;
+            
+        while(PIND.0==1);
+    }
+        
+    return data;
+}
+
+char buffer[32];
+int check_sum;
+int temp_int, temp_dec;
+int hum_int, hum_dec;
+
+void main(void) {
+    DDRB.0 = 1;
+    PORTB.0 = 0;
+    
+    lcd_init(16);
+    lcd_clear();
+    
+    while (1) {
+        
+        request(); 
+        response();
+        
+        hum_int = read_dht11();  
+        hum_dec = read_dht11();
+        temp_int = read_dht11();
+        temp_dec = read_dht11();
+        check_sum = read_dht11(); 
+        
+        if(hum_int + hum_dec + temp_int + temp_dec - check_sum)
+            continue;
+                                               
+        lcd_gotoxy(0, 0);
+        sprintf(buffer, "%d%% ", hum_int);
+        lcd_puts(buffer);
+              
+        if(hum_int > 40 && hum_int < 60)
+            PORTB.0=0;
+        else
+            PORTB.0=1;
+    }
+}

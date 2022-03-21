@@ -1,0 +1,83 @@
+/*
+ * program.asm
+ *
+ *  Created: 1/19/22 11:42:47 AM
+ *   Author: asus
+ */ 
+
+.include "m32def.inc"
+		LDI		R16,HIGH(RAMEND)
+		OUT		SPH,R16
+		LDI		R16,LOW(RAMEND)
+		OUT		SPL,R16
+
+		LDI		R16,0xFF
+		OUT		DDRC,R16		;PORTC as output
+		OUT		DDRD,R16		;PORTD as output
+
+RESET:
+		LDI		R16,1			;Yekan Fibo(t)
+		LDI		R17,0			;Dahgan Fibo(t) 
+		LDI		R18,0			;Yekan Fibo(t - 1)
+		LDI		R19,0			;Dahgan Fibo(t - 1)
+		RJMP	DISPLAY
+
+BEGIN: 
+		MOV		R26, R18
+		MOV		R27, R19
+		MOV		R18, R16
+		MOV		R19, R17
+
+		CALL	DECREMENT
+
+INCREMENT:
+		CPI		R16,9
+		BRLO	INC_YEKAN
+		CPI		R17,9
+		BRLO	INC_DAHGAN
+		RJMP	RESET
+
+DECREMENT:
+		CPI		R26,1
+		BRSH	DEC_YEKAN
+		CPI		R27,1
+		BRSH	DEC_DAHGAN
+		RJMP	DISPLAY
+
+INC_YEKAN:
+		INC		R16
+		RJMP	DECREMENT
+
+INC_DAHGAN:
+		LDI		R16,0
+		INC		R17
+		RJMP	DECREMENT
+
+DEC_YEKAN:
+		DEC		R26
+		RJMP	INCREMENT
+
+DEC_DAHGAN:
+		LDI		R26,9
+		DEC		R27
+		RJMP	INCREMENT
+
+DISPLAY:
+		OUT		PORTC,R17
+		OUT		PORTD,R16
+
+		CALL	DELAY_DISP
+
+		RJMP	BEGIN
+
+DELAY_DISP:
+		LDI		R21,0x02
+L4:		LDI		R22,0xFF
+L5:		LDI		R23,0xFF
+L6:		DEC		R23
+		BRNE	L6
+		DEC		R22
+		BRNE	L5
+		DEC		R21
+		BRNE	L4
+		RET

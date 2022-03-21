@@ -1,0 +1,12 @@
+VERSION:3 SOURCE_TIMESTAMP:543B0368
+NODE:I LEVEL:0 LINE:1 "C:\cvavr\inc\stdio.h"
+NODE:I LEVEL:0 LINE:2 "C:\cvavr\inc\mega32.h"
+NODE:I LEVEL:0 LINE:3 "C:\cvavr\inc\delay.h"
+NODE:I LEVEL:0 LINE:4 "C:\cvavr\inc\alcd.h"
+NODE:M LEVEL:0 LINE:6 "ADC_VREF_TYPE"
+NODE:V LEVEL:0 LINE:8 "buffer -> RAM:????"
+NODE:V LEVEL:0 LINE:9 "state -> R4,R5"
+NODE:F LEVEL:0 LINE:11 "read_adc(unsigned char adc_input)"
+NODE:F LEVEL:0 LINE:23 "cooler_on(int period)"
+NODE:F LEVEL:0 LINE:42 "heater_on(int period)"
+NODE:F LEVEL:0 LINE:61 "main(void)"
